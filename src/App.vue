@@ -1,29 +1,73 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+  <v-app id="app">
+    <v-card height="160px">
+      <div class="fancy-title grey--text text--darken-2">
+        <div class="title-section right">
+          <div class="main-text">Natalie</div>
+          <div class="small">Garrison</div>
+        </div>
+        <div class="title-separator">
+          <div>&</div>
+        </div>
+        <div class="title-section">
+          <div class="main-text">Stephen</div>
+          <div class="small">Martin</div>
+        </div>
+      </div>
+    </v-card>
+    <v-toolbar height="72px" class="toolbar-center" dense>
+      <v-toolbar-items>
+        <v-btn class="subheading" to="/rsvp" flat>RSVP</v-btn>
+        <v-btn class="subheading" to="/directions" flat>Directions</v-btn>
+        <v-btn class="subheading" to="/registries" flat>Registry</v-btn>
+        <v-btn class="subheading" to="/registries" flat>Our Story</v-btn>
+      </v-toolbar-items>
+    </v-toolbar>
     <router-view/>
-  </div>
+  </v-app>
 </template>
 
 <style lang="scss">
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-#nav {
-  padding: 30px;
-  a {
-    font-weight: bold;
-    color: #2c3e50;
-    &.router-link-exact-active {
-      color: #42b983;
+  .toolbar-center .v-toolbar__content {
+    align-items: center;
+    justify-content: center;
+  }
+  .fancy-title {
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+    font-family: serif;
+
+    .title-section {
+      font-size: 3.5rem;
+
+      .small {
+        font-size: 1.5rem;
+        height: 32px;
+      }
+
+      .main-text {
+        line-height: 3rem;
+      }
+
+      .x-small {
+        font-size: 1rem;
+        height: 32px;
+      }
+
+      &.right {
+        text-align: right;
+      }
+
+      .text-center {
+        text-align: center;
+      }
+    }
+
+    .title-separator {
+      font-size: 8rem;
+      margin: 0 1rem;
     }
   }
-}
 </style>
