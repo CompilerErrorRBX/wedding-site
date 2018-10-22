@@ -1,19 +1,30 @@
 <template>
   <div class="home">
     <!-- <v-img
-      src="https://www.wallpaperup.com/uploads/wallpapers/2015/04/02/653105/09d95a6f0e5f6e6a79bcbc58aa1222ad-700.jpg"
-      lazy-src="https://www.wallpaperup.com/uploads/wallpapers/2015/04/02/653105/09d95a6f0e5f6e6a79bcbc58aa1222ad-700.jpg"
-      height="600px"
+      src="https://images.pixieset.com/97310741/c9f96b98942a298b259f9a066026c8f6-xxlarge.jpg"
+      lazy-src="https://images.pixieset.com/97310741/c9f96b98942a298b259f9a066026c8f6-xxlarge.jpg"
+      height="800"
+      position="center center"
     /> -->
-    <!-- <v-parallax src="https://www.wallpaperup.com/uploads/wallpapers/2015/04/02/653105/09d95a6f0e5f6e6a79bcbc58aa1222ad-700.jpg" height="600px" /> -->
-    <v-parallax src="https://www.wallpaperup.com/uploads/wallpapers/2015/04/02/653105/09d95a6f0e5f6e6a79bcbc58aa1222ad-700.jpg" height=600></v-parallax>
-    <v-card height="200px">
+    <v-carousel>
+      <v-carousel-item
+        v-for="(image, i) in images"
+        :key="i"
+        :src="image"
+      ></v-carousel-item>
+    </v-carousel>
+    <!-- <v-parallax src="https://images.pixieset.com/97310741/c9f96b98942a298b259f9a066026c8f6-xxlarge.jpg" height="800" /> -->
+    <v-card class="py-3 text-center">
       <countdown :date="date" title="The Celebration Begins In" />
+      <v-btn class="my-2" depressed>RSVP</v-btn>
     </v-card>
-    <!-- <gmap-map
+    <gmap-map
       :center="{ lat: 37.2078854, lng: -93.2930151 }"
       :zoom="20"
-      style="width: 100%; height: 600px" /> -->
+      style="width: 100%; height: 600px" />
+    <v-card class="py-3 text-center">
+      <v-btn depressed>Get Directions</v-btn>
+    </v-card>
   </div>
 </template>
 
@@ -25,6 +36,10 @@ export default {
   components: { countdown },
   data: () => ({
     date: 'December 16, 2018 03:00:00',
+    images: [
+      'https://images.pixieset.com/97310741/c9f96b98942a298b259f9a066026c8f6-xxlarge.jpg',
+      'https://images.pixieset.com/97310741/29c1b62953b04475dab393d431557917-xxlarge.jpg',
+    ],
   }),
 };
 </script>

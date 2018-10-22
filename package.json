@@ -3,6 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "start": "npm run serve",
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint"
@@ -12,8 +13,9 @@
     "vue": "^2.5.17",
     "vue-router": "^3.0.1",
     "vue2-google-maps": "^0.10.2",
-    "vuetify": "^1.0.19",
-    "vuex": "^3.0.1"
+    "vuetify": "^1.2.9",
+    "vuex": "^3.0.1",
+    "axios": "^0.18.0"
   },
   "devDependencies": {
     "@babel/polyfill": "^7.0.0-beta.49",
@@ -21,7 +23,6 @@
     "@vue/cli-plugin-eslint": "^3.0.0",
     "@vue/cli-service": "^3.0.0",
     "@vue/eslint-config-airbnb": "^3.0.1",
-    "axios": "^0.18.0",
     "node-sass": "^4.9.0",
     "sass-loader": "^7.0.1",
     "vue-cli-plugin-axios": "0.0.4",
