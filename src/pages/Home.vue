@@ -25,6 +25,7 @@
     <v-card class="py-3 text-center">
       <v-btn depressed>Get Directions</v-btn>
     </v-card>
+    <router-view />
   </div>
 </template>
 
@@ -37,8 +38,11 @@ export default {
   data: () => ({
     date: 'December 16, 2018 03:00:00',
     images: [
-      'https://images.pixieset.com/97310741/c9f96b98942a298b259f9a066026c8f6-xxlarge.jpg',
-      'https://images.pixieset.com/97310741/29c1b62953b04475dab393d431557917-xxlarge.jpg',
+      'https://www.amazon.com/drive/v1/nodes/Gp7b5NO1ShmchrRZIap50Q/contentRedirection?querySuffix=%3FviewBox%3D2770%2C1846&ownerId=A26NWLJJDSN4Y3&cb=1540322048334',
+      'https://www.amazon.com/drive/v1/nodes/4P2vQX4NSYWjkPY5A0D64g/contentRedirection?querySuffix=%3FviewBox%3D2770%2C1846&ownerId=A26NWLJJDSN4Y3&cb=1540322048333',
+      'https://www.amazon.com/drive/v1/nodes/e7V9DJ1HQCGItGnneN3ulQ/contentRedirection?querySuffix=%3FviewBox%3D2770%2C1846&ownerId=A26NWLJJDSN4Y3&cb=1540322022537',
+      'https://www.amazon.com/drive/v1/nodes/NyVA_7uoSVGNQ4SPXNxlPg/contentRedirection?querySuffix=%3FviewBox%3D2770%2C1846&ownerId=A26NWLJJDSN4Y3&cb=1540322246494',
+      'https://www.amazon.com/drive/v1/nodes/OIDygBPwSsa0wJB9iKNIjg/contentRedirection?querySuffix=%3FviewBox%3D2770%2C1846&ownerId=A26NWLJJDSN4Y3&cb=1540322280695',
     ],
   }),
 };
