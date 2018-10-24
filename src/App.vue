@@ -20,13 +20,28 @@
     <v-toolbar height="72px" class="toolbar-center" dense>
       <v-toolbar-items>
         <v-btn class="subheading" to="/" flat>Home</v-btn>
-        <v-btn class="subheading" to="/rsvp" flat>RSVP</v-btn>
+        <v-btn class="subheading" @click="showRSVP" flat>RSVP</v-btn>
         <v-btn class="subheading" to="/registries" flat>Registry</v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <router-view/>
+    <rsvp />
   </v-app>
 </template>
+
+<script>
+import rsvp from '@/components/rsvp.vue';
+
+export default {
+  components: { rsvp },
+  methods: {
+    showRSVP() {
+      this.$store.commit('SET_SHOW_RSVP', true);
+    },
+  },
+};
+</script>
+
 
 <style lang="scss">
   .toolbar-center .v-toolbar__content {
