@@ -22,9 +22,6 @@
           <v-card-title class="fancy-title">
             <span class="text-center">Directions</span>
           </v-card-title>
-          <v-card-text>
-            
-          </v-card-text>
           <v-card-actions>
             <v-spacer></v-spacer>
             <v-btn flat @click.native="directions = false">Close</v-btn>
@@ -38,6 +35,11 @@
 <script>
 import countdown from '@/components/countdown.vue';
 import p1 from '@/assets/img/photo1.jpg';
+import p2 from '@/assets/img/photo2.jpg';
+import p3 from '@/assets/img/photo3.jpg';
+import p4 from '@/assets/img/photo4.jpg';
+import p5 from '@/assets/img/photo5.jpg';
+import p6 from '@/assets/img/photo6.jpg';
 
 export default {
   name: 'home',
@@ -46,7 +48,7 @@ export default {
     directions: false,
     date: 'December 16, 2018 03:00:00',
     images: [
-      p1,
+      p1, p2, p3, p4, p5, p6,
     ],
   }),
   methods: {
