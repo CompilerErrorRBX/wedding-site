@@ -1,3 +1,5 @@
+const apiHost = process.env.API_HOST || 'localhost';
+
 module.exports = {
   runtimeCompiler: true,
   productionSourceMap: false,
@@ -16,7 +18,7 @@ module.exports = {
   devServer: {
     proxy: {
       '/api': {
-        target: 'http://10.128.0.2:3000',
+        target: `http://${apiHost}:3000`,
         changeOrigin: true,
         pathRewrite: {
           '^/api': '/api',

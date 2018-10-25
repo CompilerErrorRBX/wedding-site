@@ -21,7 +21,7 @@
       <v-toolbar-items>
         <v-btn class="subheading" to="/" flat>Home</v-btn>
         <v-btn class="subheading" @click="showRSVP" flat>RSVP</v-btn>
-        <v-btn class="subheading" to="/registries" flat>Registry</v-btn>
+        <v-btn class="subheading" to="/registry" flat>Registry</v-btn>
       </v-toolbar-items>
     </v-toolbar>
     <router-view/>

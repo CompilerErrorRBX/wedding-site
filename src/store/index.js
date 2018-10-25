@@ -6,7 +6,7 @@ Vue.use(Vuex);
 
 export default new Vuex.Store({
   state: {
-    REGISTRY_ITEMS: {},
+    REGISTRIES: {},
     SHOW_RSVP: false,
   },
   mutations: {
@@ -15,15 +15,24 @@ export default new Vuex.Store({
       state.SHOW_RSVP = value;
     },
 
-    SET_REGISTRY_ITEMS(store, items) {
+    SET_REGISTRIES(store, items) {
       const state = store;
-      state.REGISTRY_ITEMS = items;
+      state.REGISTRIES = items;
     },
   },
   actions: {
-    getRegistryItems: async (state, eventId) => {
-      const registries = await axios.get(`/api/registries/${eventId}`);
-      state.commit('SET_REGISTRY_ITEMS', registries.data);
+    getRegistries: async (state) => {
+      const registries = await axios.post('/api', {
+        query: `query getSources {
+          getSources {
+            id title
+            items {
+              thumbnail name price quantity desiredQuantity url
+            }
+          }
+        }`,
+      });
+      state.commit('SET_REGISTRIES', registries.data.data.getSources);
 
       return registries.data;
     },
