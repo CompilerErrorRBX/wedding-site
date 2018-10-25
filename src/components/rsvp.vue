@@ -32,6 +32,7 @@
                 row
                 mandatory
                 v-model="attending"
+                @change="attendingChange"
               >
                 <v-radio label="Will be attending" :value="true" />
                 <v-radio label="Will not be attending" :value="false" />
@@ -43,7 +44,7 @@
       <v-card-actions>
         <v-spacer></v-spacer>
         <v-btn flat @click.native="toggleShow(false)">Cancel</v-btn>
-        <v-btn flat @click.native="toggleShow(false)">Submit</v-btn>
+        <v-btn flat @click.native="submit">Submit</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -63,6 +64,20 @@ export default {
     }),
   },
   methods: {
+    submit() {
+      const attending = [];
+      const guests = this.$refs['guest-name'];
+      for (let i = 0; i < guests.length; i++) {
+        const guestName = guests[i];
+        attending.push(guestName.$refs.input.value);
+      }
+
+      this.$store.dispatch('postGroupRSVP', { names: attending, confirmed: this.attending });
+      this.toggleShow(false);
+    },
+    attendingChange(e) {
+      this.attending = e;
+    },
     toggleShow(value) {
       // this.$store.state.SHOW_RSVP = value;
       this.$store.commit('SET_SHOW_RSVP', value);

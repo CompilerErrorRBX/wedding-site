@@ -27,5 +27,15 @@ export default new Vuex.Store({
 
       return registries.data;
     },
+    postGroupRSVP: async (state, rsvpInput) => {
+      await axios.post('api', {
+        query: `mutation addGroupRSVP($rsvps: RSVPGroupInput!) {
+          addGroupRSVP(rsvps: $rsvps) {
+            groupId
+          }
+        }`,
+        variables: { rsvps: rsvpInput },
+      });
+    },
   },
 });
