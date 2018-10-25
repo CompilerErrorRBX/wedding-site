@@ -10,9 +10,9 @@ import './plugins/vueGoogleMaps';
 
 Vue.config.productionTip = false;
 
-const apiHost = process.env.API_HOST || 'localhost';
+// const apiHost = process.env.API_HOST || 'localhost';
 
-axios.defaults.baseURL = `http://10.128.0.2:3000/`;
+axios.defaults.baseURL = 'http://localhost:3000/';
 
 new Vue({
   router,
