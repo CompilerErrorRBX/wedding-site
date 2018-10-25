@@ -22,13 +22,13 @@ export default new Vuex.Store({
   },
   actions: {
     getRegistryItems: async (state, eventId) => {
-      const registries = await axios.get(`api/registries/${eventId}`);
+      const registries = await axios.get(`/api/registries/${eventId}`);
       state.commit('SET_REGISTRY_ITEMS', registries.data);
 
       return registries.data;
     },
     postGroupRSVP: async (state, rsvpInput) => {
-      await axios.post('api', {
+      await axios.post('/api', {
         query: `mutation addGroupRSVP($rsvps: RSVPGroupInput!) {
           addGroupRSVP(rsvps: $rsvps) {
             groupId
