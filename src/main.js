@@ -12,7 +12,7 @@ Vue.config.productionTip = false;
 
 // const apiHost = process.env.API_HOST || 'localhost';
 
-axios.defaults.baseURL = 'http://localhost:3000/';
+// axios.defaults.baseURL = 'http://localhost:3000/';
 
 new Vue({
   router,
