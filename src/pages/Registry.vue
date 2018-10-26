@@ -1,7 +1,11 @@
 <template>
   <div>
     <v-container grid-list-md v-for="registry in registries" :key="registry.id">
-      <v-subheader>{{ registry.title }}</v-subheader>
+      <v-subheader>
+        {{ registry.title }}
+        <v-spacer />
+        <v-btn :href="registry.url">Go To Registry</v-btn>
+      </v-subheader>
       <v-layout class="grid" v-if="registry.items.length">
         <v-flex class="item-card" xs12 v-for="item in registry.items" :key="item.id">
           <item :item="item" />

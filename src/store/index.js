@@ -25,7 +25,7 @@ export default new Vuex.Store({
       const registries = await axios.post('/api', {
         query: `query getSources {
           getSources {
-            id title
+            id title url
             items {
               thumbnail name price quantity desiredQuantity url
             }
