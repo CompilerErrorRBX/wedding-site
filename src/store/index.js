@@ -8,6 +8,7 @@ export default new Vuex.Store({
   state: {
     REGISTRIES: {},
     SHOW_RSVP: false,
+    RSVPS: [],
   },
   mutations: {
     SET_SHOW_RSVP(store, value) {
@@ -18,6 +19,11 @@ export default new Vuex.Store({
     SET_REGISTRIES(store, items) {
       const state = store;
       state.REGISTRIES = items;
+    },
+
+    SET_RSVPS(store, rsvps) {
+      const state = store;
+      state.RSVPS = rsvps;
     },
   },
   actions: {
@@ -36,6 +42,20 @@ export default new Vuex.Store({
 
       return registries.data;
     },
+
+    getRSVPs: async (state) => {
+      const registries = await axios.post('/api', {
+        query: `query getRSVPs {
+          getRSVPs {
+            id confirmed fullName groupId
+          }
+        }`,
+      });
+      state.commit('SET_RSVPS', registries.data.data.getRSVPs);
+
+      return registries.data;
+    },
+
     postGroupRSVP: async (state, rsvpInput) => {
       await axios.post('/api', {
         query: `mutation addGroupRSVP($rsvps: RSVPGroupInput!) {
